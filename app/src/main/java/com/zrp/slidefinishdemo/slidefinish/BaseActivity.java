@@ -18,6 +18,7 @@ public class BaseActivity extends FragmentActivity {
     private int startOutAnimationResources = 0;
     private int finishInAnimationResources = 0;
     private int finishOutAnimationResources = 0;
+    private boolean isInAnimated = false;//是否是初次创建的resume
 
     private SlideFinishLayout slideFinishLayout;
     private boolean isCanBack = true;
@@ -75,7 +76,10 @@ public class BaseActivity extends FragmentActivity {
     protected void onResume() {
         super.onResume();
         if (startOutAnimationResources != 0) {
-            overridePendingTransition(startInAnimationResources, startOutAnimationResources);
+            if (!isInAnimated) {
+                overridePendingTransition(startInAnimationResources, startOutAnimationResources);
+                isInAnimated = true;
+            }
         }
     }
 
