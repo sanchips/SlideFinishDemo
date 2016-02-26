@@ -2,7 +2,7 @@
 右滑退出当前页面的Demo
 
 效果如下：
-![](http://7xlssg.com1.z0.glb.clouddn.com/slide_finish.gif)
+![](image/slide_finish.gif)
 
 **思路分析：**
 将android的顶层view替换为自定义的view，在其中重写事件分发与滑动事件触发右滑退出的条件与时机。
